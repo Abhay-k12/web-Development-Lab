@@ -1,0 +1,61 @@
+<!-- Create a web page of customer profile for data entry of customer’s in a Hotel, The profile should
+include Name, Address, Age, gender, Room Type (A/C, Non-A/C or Deluxe), Type of payment
+(Cash, Credit/Debit Card or Coupons) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <marquee><h1>Welcome to Graphic Era Residence!</h1></marquee>
+    
+    <form>
+        <fieldset id="mainField" class="box">
+            <legend><h2>Hotel Booking Enquirey</h2></legend> 
+            Name: 
+            <input type="text" required name="name"><br><br>
+            
+            Address:
+            <input type="text" required name="address"><br><br>
+            
+            Age:
+            <input type="number" required name="age" min="18" max="120"><br><br>
+            
+            Gender:
+            <label for="gender"></label>
+                <input type="radio" name="gender" value="male" required> Male
+                <input type="radio" name="gender" value="female" required> Female
+                <input type="radio" name="gender" value="others" required> Others
+            
+            <fieldset id="hotelRoomType">
+                <legend><h2>Hotel Room Selection</h2></legend>
+                Room Type:
+                <label for="type"></label>
+                <input type="radio" name="type" value="AC" required> AC Room
+                <input type="radio" name="type" value="Non-AC" required> Non-Ac Room
+                <input type="radio" name="type" value="Delux" required> Delux Room
+                
+            </fieldset>
+
+            <fieldset id="payment">
+                <legend><h2>Payment Options</h2></legend>
+                Payment Option:
+                <label for="payment"></label>
+                <select  id="payment" name="payment" required>
+                    <option value="Online" >Online Payment </option>
+                    <option value="Debit/Credit">Debit/Credit Card</option>
+                    <option value="Coupons">Coupons</option>
+                </select>
+            </fieldset>
+            <br>
+
+            <button type="submit">Submit</button>
+            <button type="reset"> Reset</button>
+
+        </fieldset>
+    </form>
+</body>
+</html>
