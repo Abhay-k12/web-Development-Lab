@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Position Properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 2000px; /* enables scrolling */
+        }
+
+        .box {
+            width: 200px;
+            height: 80px;
+            padding: 10px;
+            margin: 20px;
+            color: white;
+        }
+
+        /* 1. Static */
+        .static {
+            position: static;
+            background-color: gray;
+        }
+
+        /* 2. Relative */
+        .relative {
+            position: relative;
+            left: 40px;
+            top: 10px;
+            background-color: blue;
+        }
+
+        /* 3. Absolute */
+        .parent {
+            position: relative;
+            border: 2px solid black;
+            height: 100px;
+            width: 300px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            background-color: green;
+        }
+
+        /* 4. Fixed */
+        .fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: red;
+        }
+
+        /* 5. Sticky */
+        .sticky {
+            position: sticky;
+            top: 0;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box sticky">
+        Sticky Position
+    </div>
+
+    <div class="box static">
+        Static Position
+    </div>
+
+    <div class="box relative">
+        Relative Position (Moved from normal position)
+    </div>
+
+    <div class="parent">
+        Parent Box
+        <div class="box absolute">
+            Absolute Position with relative to parent
+        </div>
+    </div>
+
+    <div class="box fixed">
+        Fixed Position (Always visible)
+    </div>
+
+    <p>Scroll the page to observe the Fixed and Sticky behavior.</p>
+
+</body>
+</html>

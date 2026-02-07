@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Demonstration Page</title>
+
+    <style>
+        /* Page background */
+        body {
+            background-image: url("../resources/logo.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Different font styles */
+        h1 {
+            font-family: "Georgia", serif;
+            color: darkblue;
+        }
+
+        p {
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+        }
+
+        /* Background image for single element */
+        .box {
+            width: 300px;
+            height: 150px;
+            background-image: url("../resources/logo2.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 15px;
+            color: white;
+            margin-bottom: 20px;
+            border: 1px solid black;
+        }
+
+        /* Link styles */
+        a:link {
+            color: blue;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            color: red;
+            cursor: crosshair;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: green;
+        }
+
+        /* Customized cursor */
+        .custom-cursor a {
+            cursor: grab;
+        }
+
+        /* Layers using z-index */
+        .layer1 {
+            position: absolute;
+            top: 450px;
+            left: 50px;
+            width: 200px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.7);
+            z-index: 1;
+            padding: 10px;
+            color: white;
+        }
+
+        .layer2 {
+            position: absolute;
+            top: 480px;
+            left: 80px;
+            width: 200px;
+            height: 100px;
+            background-color: rgba(0, 0, 255, 0.7);
+            z-index: 2;
+            padding: 10px;
+            color: white;
+        }
+
+        #navBar {
+            height: 50px;
+            width: 100%;
+            background-color: lightgray;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Styling Demonstration</h1>
+
+    <p>
+        This paragraph uses a different font style.
+    </p>
+
+    <div class="box">
+    </div>
+
+    <div class="custom-cursor" id="navBar">
+        <p>
+            <a href="#">Home</a> |
+            <a href="#">About</a> |
+            <a href="#">Contact</a>
+        </p>
+    </div>
+
+    <div class="layer1">
+        Layer 1 (z-index: 1)
+    </div>
+
+    <div class="layer2">
+        Layer 2 (z-index: 2)
+    </div>
+
+</body>
+</html>
