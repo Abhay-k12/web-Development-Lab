@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+</head>
+<body style="background-color:lightblue;">
+    <marquee>
+        <h2>Form Submission Example</h2>
+    </marquee>
+    <form method="post">
+        <fieldset>
+            <legend><h2>Basic Information</h2></legend>
+            Full Name <input type="text" name="fullname" required><br><br>
+            
+            Date of Birth <input type="date" name="dob" required><br><br>
+            Gender:
+            <input type="radio" name="gender" value="male" required> Male   
+            <input type="radio" name="gender" value="female"> Female    
+            <input type="radio" name="gender" value="other"> Other<br><br>
+            
+            Address: <input type="text" name="address" required><br><br>
+            
+            Phone Number: <input type="tel" name="phone" minlength="10" maxlength="10"><br><br>
+        </fieldset>
+        <fieldset>
+            <legend><h2> Extra Information</h2> </legend>
+            Interest:
+            <input type="checkbox" name="interest" value="books"> Books
+            <input type="checkbox" name="interest" value="music"> Music 
+            <input type="checkbox" name="interest" value="videoGames"> VideoGames<br><br>
+
+            Color:
+            <input type="color" name="favcolor" value="#ffffff"><br><br>
+        </fieldset>
+
+        <br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        let output = 'Form Data:\n';
+        for (const [name, value] of formData.entries()) {
+            output += `${name}: ${value}\n`;
+        }
+        alert(output);
+    });
+</script>
+</html>

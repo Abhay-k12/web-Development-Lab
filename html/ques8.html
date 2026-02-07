@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Tags Demonstration</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    header, nav, article, section, footer {
+        margin-bottom: 20px;
+    }
+    #navbar{
+        background-color: darkblue;
+        padding: 20px;
+    }
+    nav a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: white;
+    }
+
+    #video{
+        height:auto;
+        width:auto;
+        background-color: lightgray;
+        padding: 10px;
+    }
+</style>
+<body>
+
+<!-- Header -->
+<header>
+    <marquee crollamount="3"><h1>HTML5 Tags Use Case</h1></marquee>
+</header>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <a href="#video">Video</a> |
+    <a href="#audio">Audio</a> |
+    <a href="#article">Article</a>
+</nav>
+
+<hr>
+
+<!-- Article -->
+<article id="article">
+    <h2>Article Section</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aperiam molestias fuga doloremque repellat, quod, sequi dignissimos explicabo nostrum asperiores maiores eos magnam culpa porro est quam atque alias odit?
+    Fuga alias illum deleniti, libero in recusandae voluptate. Iste illum vel delectus labore dicta sit quos odio est, quidem quae maxime accusamus ullam veritatis quam, ratione accusantium necessitatibus omnis deserunt!
+    Facere corporis ipsum atque quo et. Voluptas reiciendis dolores fugiat dolorum delectus quisquam ipsam corporis atque! Molestias natus, laboriosam odio delectus voluptate, quibusdam ad aperiam, similique itaque amet nihil esse.
+    Molestias blanditiis excepturi quasi magnam deserunt eaque similique, exercitationem nesciunt vero doloribus facilis tempore praesentium veritatis aliquid provident? Culpa unde maxime aliquid natus magnam, alias suscipit sit. In, modi recusandae.
+    Non nihil quaerat quam dolorum consectetur ducimus esse obcaecati? Quaerat omnis natus pariatur nostrum reprehenderit odio odit reiciendis necessitatibus fugiat, ea tempora blanditiis, inventore iure, commodi accusantium minus illum beatae.
+    Tempora maiores dolore natus expedita alias molestias illo iusto veniam, nemo asperiores earum velit nulla praesentium autem incidunt corporis ea doloribus impedit. Alias, asperiores eum ipsam repudiandae ab molestias eos.
+    Quas architecto voluptatibus culpa dolor. Doloribus saepe quidem velit facere dolores corrupti dolorem laudantium est quasi sed eum molestiae, quis sequi necessitatibus qui praesentium similique iste excepturi distinctio voluptatem voluptate.
+    Sed pariatur quod enim, eligendi magnam voluptate. Fuga iure magni nulla fugit libero, illo eum! Cumque placeat distinctio, neque molestias delectus obcaecati libero assumenda excepturi consectetur velit illum voluptatum itaque!
+    Quos sit voluptate at expedita, nisi possimus consectetur iste, commodi cumque error corporis! Quis fuga suscipit corporis harum possimus ex deleniti, tempora accusantium? Excepturi exercitationem dolorum voluptatem voluptates eaque minima!
+    Sapiente, labore? Quisquam quibusdam, amet tempora ipsa unde repellat fugiat deserunt doloremque sunt, voluptates ad iusto dolorum provident nesciunt. Minima placeat molestias eligendi quibusdam consectetur veritatis est nostrum sunt fuga.</p>
+</article>
+
+<hr>
+
+<!-- Video -->
+<section id="video">
+    <h2>Video Tag</h2>
+    <video controls>
+        <source src="../resources/Shinchan namaste sabhi song - Toon of the galaxy (144p, h264).mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+</section>
+
+<hr>
+
+<!-- Audio -->
+<section id="audio">
+    <h2>Audio Tag</h2>
+    <audio controls>
+        <source src="../resources/Shinchan namaste sabhi song - Toon of the galaxy (144p, h264).mp4" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+</section>
+
+<hr>
+
+<!-- Embed -->
+<section>
+    <h2>Embed Tag</h2>
+    <embed src="FSWD Lab Manual.pdf" width="90%" height="45%">
+</section>
+
+<hr>
+
+<!-- Datalist -->
+<section>
+    <h2>Datalist Tag</h2>
+    <input list="courses" placeholder="Choose a course">
+    <datalist id="courses">
+        <option value="HTML">
+        <option value="CSS">
+        <option value="JavaScript">
+        <option value="Python">
+    </datalist>
+</section>
+
+<hr>
+
+<!-- Output -->
+<section>
+    <h2>Output Tag</h2>
+    <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="number" id="a" value="10"> +
+        <input type="number" id="b" value="20">
+        =
+        <output name="result"></output>
+    </form>
+</section>
+
+<hr>
+
+<!-- Bdi Tag Example: -->
+<section>
+    <h2>Bdi Tag Example</h2>
+    <p>Normal text: Hello World!</p>
+    <bdi>Reversed text: dlroW olleH</bdi>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 HTML5 Demo Page</p>
+</footer>
+
+</body>
+</html>
