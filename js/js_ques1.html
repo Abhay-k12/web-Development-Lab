@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+    <marquee><h2>Credit Card Validation</h2></marquee>
+    <br><hr>
+    <fieldset>
+        <legend><h4>Card Validation Form</h4></legend>
+    </fieldset>
+    Enter the Card Number: <input type="text" id="card-number"required>
+    <br><br>
+
+    Select Your Card Type:
+    <select type="card-type" required id="card-type">
+        <option value="MasterCard"> Master Card</option>
+        <option value = "Visa" > Visa </option>
+        <option value="AmericanExpress" >American Express</option>
+    </select><br>
+    <hr>
+    <div id="result">Result: </div>
+    <br>
+    <hr>
+    <button id="submit">Submit</button>
+</body>
+
+<script>
+    const cardNumber = document.getElementById("card-number");
+    const cardType = document.getElementById("card-type");
+    const btn = document.getElementById("submit");
+
+    btn.addEventListener('click', function (){
+        console.log(cardNumber.value, cardType.value);
+
+        if(cardType.value === "MasterCard" && cardNumber.value.startsWith("5") && cardNumber.value.length === 16){
+            document.getElementById("result").append("Valid Master Card.");
+        }
+        else if(cardType.value === "Visa" && cardNumber.value.startsWith("4") && (cardNumber.value.length === 13 || cardNumber.value.length === 16)){
+            document.getElementById("result").append("Valid Visa Card.")    ;
+        }
+        else if(cardType.value === "AmericanExpress" && (cardNumber.value.startsWith("34") || cardNumber.value.startsWith("37")) && cardNumber.value.length === 15){
+            document.getElementById("result").append("Valid American Express Card.");
+        }
+        else{
+            document.getElementById("result").append("Invalid Card Number for the selected Card Type.");
+        }
+    });
+    
+</script>
+</html>
