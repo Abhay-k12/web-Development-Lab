@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend><h2>Input Validation Form</h2></legend>
+        Enter your name: <input type="text" required id="name">
+        <br><br>
+        Enter you mail: <input type="text" required id="email">
+        <br><br>
+        Enter your Password: <input type="text" required id="password">
+        <br>
+        <hr>
+        <div id="result">Result: </div>
+        <hr
+        <br>
+        <button id="submit">Submit</button>
+    </fieldset>
+
+</body>
+
+<script>
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const btn = document.getElementById("submit");
+    const result = document.getElementById("result");
+
+    btn.addEventListener('click', function() {
+        console.log(name.value, email.value, password.value);
+        result.textContent = "Result: ";
+
+        const patternName = /^[a-zA-Z ]{3,}$/;
+        const patternEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        
+        const patternPasswordLower = /[a-z]/;
+        const patternPasswordUpper = /[A-Z]/;
+        const patternPasswordDigit = /[0-9]/;
+        const patternPasswordSpecial = /[^a-zA-Z0-9]/;
+
+        if(!patternName.test(name.value)) {
+            result.append("Inavalid Name.");
+        }
+        else if(!patternEmail.test(email.value)) {
+            result.append("Invalid Email.");
+        }
+        else if(password.value.length >=8 && !patternPasswordLower.test(password.value) || !patternPasswordUpper.test(password.value) || !patternPasswordDigit.test(password.value) || !patternPasswordSpecial.test(password.value)) {
+            result.append("Invalid Password.");
+        }
+        else {
+            result.append("All inputs are valid.");
+        }
+    });
+</script>
+</html>
