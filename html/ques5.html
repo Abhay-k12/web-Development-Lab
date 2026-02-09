@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Map Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .info {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid black;
+            display: none;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+    <script>
+        function showInfo(text) {
+            document.getElementById("infoBox").style.display = "block";
+            document.getElementById("infoBox").innerHTML = text;
+        }
+    </script>
+</head>
+<body>
+
+<h2>Image Map with Hotspots</h2>
+
+<img src="https://via.placeholder.com/400x300"
+     alt="Sample Image"
+     usemap="#myMap">
+
+<map name="myMap">
+    <!-- Hotspot 1 -->
+    <area shape="rect" coords="20,20,120,120"
+          href="#"
+          onclick="showInfo('You clicked Region 1'); return false;">
+
+    <!-- Hotspot 2 -->
+    <area shape="circle" coords="250,100,50"
+          href="#"
+          onclick="showInfo('You clicked Region 2'); return false;">
+
+    <!-- Hotspot 3 -->
+    <area shape="rect" coords="150,180,300,260"
+          href="#"
+          onclick="showInfo('You clicked Region 3'); return false;">
+</map>
+
+<div id="infoBox" class="info"></div>
+
+</body>
+</html>
