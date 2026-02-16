@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend><h2>Phone Number Details</h2></legend>
+        Enter your Phone Number: <input type="text" required id="input">
+        <br>
+        <p>Format: (Area Code) Follwed by phone Number.</p>
+        <hr>
+        <div id="areaCode"> Locality Code: </div>
+        <br>
+        <div id="phoneNumber"> Phone Number: </div>
+        <br>
+        <button id="btn">Submit</button>
+    </fieldset>
+</body>
+<script>
+    const phone = document.getElementById("input");
+    const areaResult = document.getElementById("areaCode");
+    const phoneResult = document.getElementById("phoneNumber");
+    const btn = document.getElementById("btn");
+
+    btn.addEventListener('click',function(){
+        let phoneNumber = phone.value;
+        let details = phoneNumber.split(')');
+
+        areaResult.append(details[0].substring(1));
+        phoneResult.append(details[1]);
+    });
+</script>
+</html>
