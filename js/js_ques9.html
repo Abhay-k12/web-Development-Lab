@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #result1, #result2 {
+            background-color: greenyellow;
+            border: 1px solid black;
+            padding: 2px;
+            opacity: 20;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            box-shadow: inset;
+            border-radius: 20px;
+            padding: 3px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend><h2>String Input</h2></legend>
+        Enter the String: <input id="input1" type="text" required>
+        <br><br>
+        <div id="result1"> First Occurrence Of Vowel: </div>
+        <br>
+        <button onclick="getVowel(document.getElementById('input1').value)">Submit</button>
+    </fieldset>
+            
+    <fieldset>
+        <legend><h2>Numerical Input</h2></legend>
+        Enter the Number: <input id="input2" type="number" required>
+        <br><br>
+        <div id="result2"> Reversed Numeral: </div>
+        <br>            
+        <button onclick="getReverse(document.getElementById('input2').value)">Submit</button>
+    </fieldset>
+</body>
+<script>
+    const result1 = document.getElementById("result1");
+    const result2 = document.getElementById("result2");
+
+    function getVowel(sentence) {
+        const vowels = ["a", "e", "i", "o", "u"];
+        sentence.toLowerCase();
+        let result = -1;
+        
+        for(let i=0; i<sentence.length; i++) {
+            if(vowels.includes(sentence[i])) {
+                result = i;
+                break;
+            }
+        }
+
+        if(result === -1)
+            result1.append("No Vowel Found In The Given Sentence.")
+        else
+            result1.append(result);
+    }
+
+    function getReverse(num) {
+        let number = parseInt(num);
+        let result = 0;
+        let flag = (number<0)?-1:1;
+
+        number = Math.abs(number);
+        while(number>0) {
+            let remainder = number%10;
+            result = result*10 + remainder;
+            number = Math.floor(number/10);
+        }
+
+        result2.append(result*flag);
+    }
+</script>
+</html>
