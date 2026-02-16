@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend><h2>Day Calculator</h2></legend>
+        Enter your Date of Birth: <input type="date" required id="dob">
+        <br>
+        <div id="result">Result: </div>
+        <br>
+        <button id="btn">Submit</button>
+    </fieldset>
+    
+</body>
+<script>
+    const date = document.getElementById("dob");
+    const result = document.getElementById("result");
+    const btn = document.getElementById("btn");
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    btn.addEventListener('click', function() {
+        result.innerText="Result: ";
+        dateOfBirth = new Date(date.value);
+        result.append(days[dateOfBirth.getDay()]);
+    });
+</script>
+</html>
