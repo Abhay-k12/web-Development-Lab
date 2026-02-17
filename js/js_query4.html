@@ -149,7 +149,6 @@
                 <button class="nums an"value=".">.</button>
                 <button class="nums an"value="0">0</button>
                 <button id="ac" class="btn">AC</button>
-                
             </div>
             <div id="op">
                 <button id="equal" class="btn">=</button>
@@ -163,37 +162,37 @@
     </div>
 </div>
 
-<script>
-    let nums=document.querySelectorAll(".an");
-    let msg=document.querySelector("#show");
-    let result=document.querySelector("#equal");
-    let clear=document.querySelector("#ac");
-    let cl=document.querySelector("#bs");
+    <script>
+        let nums=document.querySelectorAll(".an");
+        let msg=document.querySelector("#show");
+        let result=document.querySelector("#equal");
+        let clear=document.querySelector("#ac");
+        let cl=document.querySelector("#bs");
 
-    let reStr="";
-    nums.forEach((num)=>{
-        num.addEventListener("click",()=>{
-            reStr= reStr+ num.innerText;
-            msg.innerText=reStr;
+        let reStr="";
+        nums.forEach((num)=>{
+            num.addEventListener("click",()=>{
+                reStr= reStr+ num.innerText;
+                msg.innerText=reStr;
+            });
         });
-    });
 
-    result.addEventListener("click",()=>{
-        let finalVal=eval(reStr);
-        //console.log(finalVal);
-        msg.innerText=finalVal;
-        reStr=""+finalVal;
-    });
+        result.addEventListener("click",()=>{
+            let finalVal=eval(reStr);
+            //console.log(finalVal);
+            msg.innerText=finalVal;
+            reStr=""+finalVal;
+        });
 
-    clear.addEventListener("click",()=>{
-        reStr="";
-        msg.innerText="";
-    });
+        clear.addEventListener("click",()=>{
+            reStr="";
+            msg.innerText="";
+        });
 
-    cl.addEventListener("click",()=>{
-    reStr=reStr.slice(0,length-1);
-    msg.innerText=reStr;
-    });
-</script>
+        cl.addEventListener("click",()=>{
+        reStr=reStr.slice(0,reStr.length-1);
+        msg.innerText=reStr;
+        });
+    </script>
 </body>
 </html>
