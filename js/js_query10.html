@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #legend{
+            color:olivedrab
+        }
+        #result {
+            padding: 2px;
+            background-color: greenyellow;
+            color: black;
+            border: solid green 1px;
+        }
+
+        #btn{
+            padding: 4px;
+            background-color: green;
+            color: white;
+            border: solid greenyellow 1px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend id="legend"><h2>Toggle String Characters</h2></legend>
+        Enter the String: <input type="text" id="input1">
+        <br><br>
+        <div id="result"> Result: </div>
+        <br>
+        <button id="btn">Submit</button>
+    </fieldset>
+</body>
+<script>
+    const inputBox = document.getElementById("input1");
+    const result = document.getElementById("result");
+    const btn = document.getElementById("btn");
+
+    btn.addEventListener("click", function(){
+        result.innerText="Result: ";
+        let inputString = inputBox.value;
+        let resultString = "";
+        
+        if(inputString.length === 0) {
+            result.append("Please enter a String.");
+            return;
+        }
+
+        for(let i=0; i<inputString.length; i++) {
+            if(inputString[i] === inputString[i].toLowerCase())
+                resultString  += inputString[i].toUpperCase();
+            else
+                resultString  += inputString[i].toLowerCase();
+        }
+
+        result.append(resultString);
+    });
+</script>
+</html>
