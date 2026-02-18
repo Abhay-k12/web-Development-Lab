@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend><h3>Enter The Follwing Details</h3></legend>
+        Select Your City: 
+        <Select name="city" id="city"> 
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Delhi">Delhi</option>
+        </Select>
+        <br><br>
+        
+        Select Your Car Model: 
+        <select name="CarName" id="carName">
+            <option value="Maruti-K10">Maruti-K10</option>
+            <option value="Zen-Astelo">Zen-Astelo</option>
+            <option value="Wagnor">Wagnor</option>
+            <option value="Maruti-SX4">Maruti-SX4</option>
+        </select>
+        <br><br>
+
+        <button id="btn">Submit</button>
+    </fieldset>
+
+    <fieldset>
+        <legend><h3>Survey Results</h3></legend>
+        <div id="result"></div>
+    </fieldset>
+</body>
+
+<script>
+    let surveyMatrix = {"Pune":[0,0,0,0],"Mumbai":[0,0,0,0],"Bangalore":[0,0,0,0],"Delhi":[0,0,0,0]};
+    
+    const cars = ["Maruti-K10", "Zen-Astelo", "Wagnor", "Maruti-SX4"];
+    const cities = ["Pune","Mumbai","Bangalore","Delhi"];
+
+    const city = document.getElementById("city");
+    const car = document.getElementById("carName");
+    const btn = document.getElementById("btn");
+    const result = document.getElementById("result");
+    
+    function showResultMatrix() {
+        result.innerHTML = `
+            <table border="1">
+                <tr>
+                    <th>City</th>
+                    <th>Maruti-K10</th>
+                    <th>Zen-Astelo</th>
+                    <th>Wagnor</th>
+                    <th>Maruti-SX4</th>
+                </tr>
+                
+                <tr>
+                    <td>Pune</td>
+                    <td>${surveyMatrix["Pune"][0]}</td>
+                    <td>${surveyMatrix["Pune"][1]}</td>
+                    <td>${surveyMatrix["Pune"][2]}</td>
+                    <td>${surveyMatrix["Pune"][3]}</td>
+                </tr>
+
+                <tr>
+                    <td>Mumbai</td>
+                    <td>${surveyMatrix["Mumbai"][0]}</td>
+                    <td>${surveyMatrix["Mumbai"][1]}</td>
+                    <td>${surveyMatrix["Mumbai"][2]}</td>
+                    <td>${surveyMatrix["Mumbai"][3]}</td>
+                </tr>
+
+                <tr>
+                    <td>Bangalore</td>
+                    <td>${surveyMatrix["Bangalore"][0]}</td>
+                    <td>${surveyMatrix["Bangalore"][1]}</td>
+                    <td>${surveyMatrix["Bangalore"][2]}</td>
+                    <td>${surveyMatrix["Bangalore"][3]}</td>
+                </tr>
+
+                <tr>
+                    <td>Delhi</td>
+                    <td>${surveyMatrix["Delhi"][0]}</td>
+                    <td>${surveyMatrix["Delhi"][1]}</td>
+                    <td>${surveyMatrix["Delhi"][2]}</td>
+                    <td>${surveyMatrix["Delhi"][3]}</td>
+                </tr>
+            </table>
+        `;
+    }
+
+    btn.addEventListener("click", function() {
+        let carName = car.value;
+        let cityName = city.value;
+
+        let carIndex = cars.indexOf(carName);
+        surveyMatrix[cityName][carIndex] += 1;
+        showResultMatrix();
+    });
+
+</script>
+</html>
