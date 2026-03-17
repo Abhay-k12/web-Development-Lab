@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height:150px;
+            width:150px;
+            font-weight: bolder;
+            background-color: rgb(216, 212, 212);
+            color:black;
+            box-shadow:1px 1px 1px 1px black;
+            margin-top: 100px;
+            display: inline-block;
+            font-size: 100px;
+        }
+
+        .separator {
+            height:150px;
+            width:120px;
+            font-weight: bold;
+            margin-top: 100px;
+            display: inline-block;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <span id="hour" class="box"></span>
+        <span class="separator">:</span>
+        <span id="mins" class="box"></span>
+        <span class="separator">:</span>
+        <span id="secs" class="box"></span>
+        <div id="date"></div>
+    </center>
+
+    <script>
+        const hour = document.getElementById('hour');
+        const mins = document.getElementById('mins');
+        const secs = document.getElementById('secs');
+
+        function updateTime() {
+            const date = new Date();
+            hour.innerText = date.getHours();
+            mins.innerText = date.getMinutes();
+            secs.innerText = date.getSeconds();
+        }
+
+        updateTime();
+        const interval = setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
