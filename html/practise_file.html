@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="sample">
+        <input type="text" name="email" required>
+        <select name="gender">
+            <option value="male">Male</option>
+            <option value="Female">Female</option>
+            <option value="others">Others</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form1 = document.getElementById('sample');
+
+        form1.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const pattern = /^[a-zA-Z0-9]+@[a-z]+\.[a-z]+/
+            
+            if(!pattern.test(formData.get('email')))
+                alert("wromg wrong wrong!!" + formData.get('gender'));
+            else    
+                alert("right right right!!!");
+        });
+    </script>
+</body>
+</html>
