@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            <h2>Select Deaprtemnt For Employee Details</h2>
+        </legend>
+        <form method="POST" action="empDetails.php" onsubmit="return validation(event)">
+            <div>
+                Department Number:
+                <input type="checkbox" name="dno[]" value="1">Department 1
+                <input type="checkbox" name="dno[]" value="2">Department 2
+                <input type="checkbox" name="dno[]" value="3">Department 3
+                <input type="checkbox" name="dno[]" value="4">Department 4
+            </div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <script>
+            function validation(event) {
+                event.preventDefault();
+
+                const formData = new FormData(event.target);
+
+                if(formData.getAll('dno[]').length == 0) {
+                    alert("Please select atleast one department");
+                    return false;
+                }
+                
+                event.target.submit();
+            }
+        </script>
+    </fieldset>
+</body>
+</html>

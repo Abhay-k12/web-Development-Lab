@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend><h2>Employee Data</h2></legend>
+        <form method="POST" action="submission.php" onsubmit="return validateForm(event)">
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" name="empname" id="name"><br><br>
+            </div>
+            
+            <div>
+                <label for="empid">Employee Id: </label>
+                <input type="number" name="empid" id="empid"><br><br>
+            </div>
+
+            <div>
+                <label for="dno">Department Number: </label>
+                <input type="number" name="dno" id="dno"><br><br>
+            </div>
+            
+            <div>
+                <label for="salary">Salary: </label>
+                <input type="number" name="salary" id="salary"><br><br>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </fieldset>
+
+    <script>
+        function validateForm(event) {
+            const formData = new FormData(event.target);
+            
+            if(formData.get('empname')==null || formData.get('empname').length==0) {
+                alert("Name Can't be empty.");
+                return false;
+            }
+
+            if(formData.get('empid')==null || formData.get('empid') > 1000 || formData.get('empid') <100) {
+                alert("Employee Id must lies between the range 100 to 1000.");
+                return false;
+            }
+
+            if(formData.get('dno')==null || formData.get('dno') > 10 || formData.get('dno') <1) {
+                alert("Department Number must lies between the range 1 to 10.");
+                return false;
+            }
+            
+            if(formData.get('salary')==null) {
+                alert("salary can't be empty.")
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
