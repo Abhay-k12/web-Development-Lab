@@ -1,0 +1,32 @@
+<!-- Using PHP and MySQL, develop a program to accept book information viz. Accession
+number, title, authors, edition and publisher from a web page and store the information in
+a database and to search for a book with the title specified by the user and to display the
+search results with proper headings. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="post" action="registerBook.php">
+        <fieldset>
+            <legend><h1>Book Registration</h1></legend>
+            Accession Number: <input type="number" required name="accessionNumber"><br><br>
+            
+            Title: <input type="text" required name="title"><br><br>
+            
+            Authors: <input type="text" required name="authors"><br><br>
+            
+            Edition: <input type="text" required name="edition"><br><br>
+            
+            Publisher: <input type="text" required name="publisher"><br><br>
+            
+            <input type="submit">
+    </fieldset>
+    </form>
+</body>
+</html>
